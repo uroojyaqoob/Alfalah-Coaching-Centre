@@ -322,8 +322,8 @@ background: #f59e0b;
   justify-content: center;
   align-items: center;
   padding: 30px 40px;
-  border-bottom: 2px solid #1e293b;
-  border-right: none;
+  border-right: 2px solid #1e293b;
+  padding: 30px 40 px;
 }
 .stat-box:last-child {
   border-botttom: none;
