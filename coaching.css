@@ -317,18 +317,23 @@ nav ul {
   grid-template-columns: repeat(3, 1fr);
 }
 .stat-box {
-  background: #f59e0b;
+background: #f59e0b;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 30px 40px;
-  border-right: 2px solid #1e293b;
-}
-.stat-box:last-child {
+  border-bottom: 2px solid #1e293b;
   border-right: none;
 }
+.stat-box:last-child {
+  border-botttom: none;
+}
 .stat-icon {
-  background: white;
+background: white;
   padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 20px;
   border-left: 4px solid #1e293b;
   color: #1e293b;
@@ -344,6 +349,13 @@ nav ul {
   color: white;
   margin: 5px 0 0 0;
   font-size: 1.1rem;
+}
+.stat-content{
+  text-align: left;
+}
+@media(max-width: 768px){
+.stats-container{
+  grid-template-columns: 1fr;
 }
 .main-footer {
   background: #2d3e50;
