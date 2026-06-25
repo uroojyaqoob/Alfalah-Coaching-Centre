@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes & Fees - Al-Falah Coaching Center</title>
+  <link rel="stylesheet" href="coaching.css">
+</head>
+<body>
+
+<main>
+
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+        <div class="logo"><b>Al-Falah</b> <span>Coaching Centre</span></div>
+      </a>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      
+      <li><a href="courses.html">Classes & Fees</a></li>
+      <li><a href="admission.html">Admission</a></li>
+      <li><a href="teachers.html">Faculty</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+  </header>
+
+
+  <section style="padding-top:120px;">
+    <h2>Our <span>Classes & Fee Structure</span></h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto 40px;">First select the class, then the faculty. Fees, subjects, and timings will all appear.</p>
+    
+    
+    <div style="max-width:600px; margin:0 auto 30px; display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+      <div class="form-group">
+        <label for="class">1. Select Class</label>
+        <select id="class" onchange="loadFaculty()">
+          <option value="">-- Select Class --</option>
+          <option value="9-10">Class 9-10 Matric</option>
+          <option value="11">Class 11 Intermediate</option>
+          <option value="12">Class 12 Intermediate</option>
+          <option value="test">Entry Test Prep</option>
+        </select>
+      </div>
+      <div class="form-group" id="faculty-div" style="display:none;">
+        <label for="faculty">2. Select Faculty/Group</label>
+        <select id="faculty" onchange="showFeeDetails()">
+          <option value=""></option>
+        </select>
+      </div>
+    </div>
+
+  
+    <div id="fee-details"></div>
+  </section>
+</main>
+
+  <footer>
+    <p>© 2026 Al-Falah Coaching Center. All Rights Reserved.</p>
+  </footer>
+
+  <script src="coaching.js"></script>
+</body>
+</html>

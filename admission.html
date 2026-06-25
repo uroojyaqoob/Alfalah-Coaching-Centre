@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission Form - Al-Falah Coaching</title>
+<link rel="stylesheet" href="coaching.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+        <div class="logo"><b>Al-Falah </b><span>Coaching Centre</span></div>
+      </a>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+    
+      <li><a href="courses.html">Classes & Fees</a></li>
+      <li><a href="admission.html">Admission</a></li>
+      <li><a href="teachers.html">Faculty</a></li>
+      <li><a href="about.html">About us</a></li>
+
+        
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+  </header>
+
+
+<section>
+  <section class="admission">
+<h2>Admission <span>Form 2026</span></h2>
+  </section>
+  
+  <form class="contact-form" onsubmit="submitAdmission(event)">
+    <h3 style="color:var(--navy); margin-bottom:15px;">Student Information</h3>
+    <input type="text" id="sname" placeholder="Student Full Name" required>
+    <input type="text" id="fname" placeholder="Father's Name" required>
+    
+    <input type="text" id="cnic" placeholder="CNIC / B-Form Number" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" title="Format: 12345-1234567-1" required>
+
+<select id="gender" required>
+  <option value="">-- Select Gender --</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+</select>
+
+<input type="date" id="dob" placeholder="Date of Birth" required>
+
+<select id="religion" required>
+  <option value="">-- Select Religion --</option>
+  <option value="Islam">Islam</option>
+  <option value="Christianity">Christianity</option>
+  <option value="Hinduism">Hinduism</option>
+  <option value="Sikhism">Sikhism</option>
+  <option value="Other">Other</option>
+</select>
+
+<select id="country" required>
+  <option value="">-- Select Country --</option>
+  <option value="Pakistan" selected>Pakistan</option>
+  <option value="India">India</option>
+  <option value="Bangladesh">Bangladesh</option>
+  <option value="Afghanistan">Afghanistan</option>
+  <option value="UAE">UAE</option>
+  <option value="Saudi Arabia">Saudi Arabia</option>
+  <option value="USA">USA</option>
+  <option value="UK">UK</option>
+  <option value="Canada">Canada</option>
+  <option value="Other">Other</option>
+</select>
+
+<select id="education" required>
+  <option value="">-- Previous Education --</option>
+  <option value="Primary">Primary School</option>
+  <option value="Middle">Middle School</option>
+  <option value="Matric">Matric / O-Level</option>
+  <option value="Intermediate">Intermediate / A-Level</option>
+  <option value="Bachelor">Bachelor</option>
+  <option value="Other">Other</option>
+</select>
+
+
+
+    <div class="form-group">
+  <!-- <label for="class">1. Select Class *</label> -->
+  <select id="class" name="class" required onchange="loadFaculty()">
+    <option value="">-- Select Class --</option>
+    <option value="9-10">Class 9-10 Matric</option>
+    <option value="11">Class 11 Intermediate</option>
+    <option value="12">Class 12 Intermediate</option>
+  </select>
+</div>
+
+<div class="form-group" id="faculty-div" style="display:none;">
+  <label for="faculty">2. Select Faculty/Group *</label>
+  <select id="faculty" name="faculty" required>
+    <option value="">-- Pehle Class Select Karo --</option>
+  </select>
+</div>
+    
+    <select id="timing" required>
+      <option value="">Select Timing</option>
+      <option>Morning 8AM-1PM</option>
+      <option>Evening 3PM-6PM</option>
+      <option>Evening 6PM-9PM</option>
+    </select>
+
+    <h3 style="color:var(--navy); margin-bottom:15px; margin-top:30px;">Parent / Guardian Information</h3>
+ <input type="text" id="pname" placeholder="Parent Name" required>
+<input type="text" id="parent-cnic" placeholder="Parent/Guardian CNIC" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" title="Format: 12345-1234567-1" required>
+
+<input type="text" id="occupation" placeholder="Parent Occupation" required>
+
+<select id="parent-education" required>
+  <option value="">-- Parent Education --</option>
+  <option value="Uneducated">Uneducated</option>
+  <option value="Primary">Primary</option>
+  <option value="Middle">Middle</option>
+  <option value="Matric">Matric / O-Level</option>
+  <option value="Intermediate">Intermediate / A-Level</option>
+  <option value="Bachelor">Bachelor</option>
+  <option value="Master">Master or Higher</option>
+</select>
+
+<select id="income" required>
+  <option value="">-- Monthly Income --</option>
+  <option value="Below 25000">Below 25,000</option>
+  <option value="25000-50000">25,000 - 50,000</option>
+  <option value="50000-100000">50,000 - 100,000</option>
+  <option value="100000-200000">100,000 - 200,000</option>
+  <option value="Above 200000">Above 200,000</option>
+</select>
+    
+    <h3 style="color:var(--navy); margin:20px 0 15px 0;">Parent Contact</h3>
+   
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <textarea id="address" rows="3" placeholder="Full Address" required></textarea>
+    
+    <button type="submit" class="btn">Submit Admission Form</button>
+  </form>
+
+
+  
+
+
+<div id="thank-you-box" style="display:none; max-width:700px; margin:30px auto; background:white; padding:40px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.08); text-align:center;">
+  <div style="font-size:50px; color:#28a745; margin-bottom:15px;">✓</div>
+  <h2 style="color:#1a365d; margin-bottom:10px;">Thank You!</h2>
+  <p style="color:#555; font-size:18px; margin-bottom:25px;">Your admission form has been submitted successfully. We will contact you soon.</p>
+  <a href="index.html" class="btn">Back to Home</a>
+</div>
+</section>
+
+<footer>
+  <p>© 2026 Al-Falah Coaching Center</p>
+</footer>
+
+<script src="coaching.js"></script>
+</body>
+</html>
